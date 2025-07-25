@@ -9,14 +9,14 @@ hide_config = false
 # You can use multiple keys to avoid rate limits.
 # For example: pexels_api_keys = ["123adsf4567adf89","abd1321cd13efgfdfhi"]
 # 特别注意格式，Key 用英文双引号括起来，多个Key用逗号隔开
-pexels_api_keys = ["RrKQShD1Tg3tG52r9yN626mOHYT2cG7hboThfuLNKs4i43COQrs7Wf81"]
+pexels_api_keys = [RrKQShD1Tg3tG52r9yN626mOHYT2cG7hboThfuLNKs4i43COQrs7Wf81]
 
 # Pixabay API Key
 # Register at https://pixabay.com/api/docs/ to get your API key.
 # You can use multiple keys to avoid rate limits.
 # For example: pixabay_api_keys = ["123adsf4567adf89","abd1321cd13efgfdfhi"]
 # 特别注意格式，Key 用英文双引号括起来，多个Key用逗号隔开
-pixabay_api_keys = ["51460692-fb579b6f12b21de9fb85cb77e"]
+pixabay_api_keys = [51460692-fb579b6f12b21de9fb85cb77e]
 
 # 支持的提供商 (Supported providers):
 #   openai
@@ -30,7 +30,7 @@ pixabay_api_keys = ["51460692-fb579b6f12b21de9fb85cb77e"]
 #   oneapi
 #   cloudflare
 #   ernie       (文心一言)
-llm_provider = "openai"
+llm_provider = "deepseek"
 
 ########## Pollinations AI Settings
 # Visit https://pollinations.ai/ to learn more
@@ -81,8 +81,8 @@ azure_model_name = "gpt-35-turbo"        # replace with your model deployment na
 azure_api_version = "2024-02-15-preview"
 
 ########## Gemini API Key
-gemini_api_key = ""
-gemini_model_name = "gemini-1.0-pro"
+gemini_api_key = "AIzaSyCMqLmegLY62sgNPVUcbvQhsRb2CzyOkA8"
+gemini_model_name = "gemini-2.0-flash"
 
 ########## Qwen API Key
 # Visit https://dashscope.console.aliyun.com/apiKey to get your API key
@@ -95,7 +95,7 @@ qwen_model_name = "qwen-max"
 
 ########## DeepSeek API Key
 # Visit https://platform.deepseek.com/api_keys to get your API key
-deepseek_api_key = ""
+deepseek_api_key = "sk-a9b460f3069c4d2fa4fd1c734bd47e7c"
 deepseek_base_url = "https://api.deepseek.com"
 deepseek_model_name = "deepseek-chat"
 
