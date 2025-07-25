@@ -3,21 +3,30 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # Le decimos que escuche en todas las IPs, no solo en localhost
-    command: [ "streamlit", "run", "./webui/Main.py","--server.address=0.0.0.0","--server.enableCORS=True","--browser.gatherUsageStats=False" ]
+    command: [
+      "streamlit",
+      "run",
+      "./webui/Main.py",
+      "--server.address=0.0.0.0",
+      "--server.enableCORS=True",
+      "--browser.gatherUsageStats=False"
+    ]
     volumes:
       - ./:/MoneyPrinterTurbo
+    ports:
+      - "8501:8501"  # Asegura el mapeo al puerto externo
     restart: always
+
   api:
     build:
       context: .
       dockerfile: Dockerfile
-    # Usamos el comando original
     command: [ "python3", "main.py" ]
     volumes:
       - ./:/MoneyPrinterTurbo
-    restart: always
-    # Y le pasamos la variable de entorno para que escuche en todas las IPs
+    ports:
+      - "8080:8080"  # Asegura el mapeo al puerto externo
     environment:
       - HOST=0.0.0.0
       - PORT=8080
+    restart: always
