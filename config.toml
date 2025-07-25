@@ -62,3 +62,8 @@ voice_name = "en-AU-NatashaNeural-Female"
 font_name = "MicrosoftYaHeiBold.ttc"
 text_fore_color = "#FFFFFF"
 font_size = 60
+
+[server]
+host = "0.0.0.0"
+port = 8000
+
