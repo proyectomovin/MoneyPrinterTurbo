@@ -1,4 +1,3 @@
-# Definición de un volumen común para ambos servicios
 x-common-volumes: &common-volumes
   - ./:/MoneyPrinterTurbo
 
@@ -7,9 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # La línea 'container_name' ha sido eliminada
-    # El bloque 'ports' ha sido eliminado
-    command: [ "streamlit", "run", "./webui/Main.py", "--server.address=127.0.0.1", "--server.enableCORS=True", "--browser.gatherUsageStats=False" ]
+    command: [ "streamlit", "run", "./webui/Main.py","--browser.serverAddress=127.0.0.1","--server.enableCORS=True","--browser.gatherUsageStats=False" ]
     volumes:
       - *common-volumes
     restart: always
@@ -17,8 +14,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # La línea 'container_name' ha sido eliminada
-    # El bloque 'ports' ha sido eliminado
     command: [ "python3", "main.py" ]
     volumes:
       - *common-volumes
