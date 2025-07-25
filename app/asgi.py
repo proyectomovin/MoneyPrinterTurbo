@@ -70,7 +70,7 @@ app.mount(
 )
 
 public_dir = utils.public_dir()
-app.mount("/", StaticFiles(directory=public_dir, html=True), name="")
+app.mount("/public", StaticFiles(directory=public_dir, html=True), name="public")
 
 
 @app.on_event("shutdown")
