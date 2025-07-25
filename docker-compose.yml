@@ -13,8 +13,8 @@ services:
     ]
     volumes:
       - ./:/MoneyPrinterTurbo
-    ports:
-      - "8601:8501"  # cambia el puerto externo para evitar conflicto
+    expose:
+      - "8501"  # lo expone internamente al proxy reverso
     restart: always
 
   api:
@@ -24,8 +24,8 @@ services:
     command: [ "python3", "main.py" ]
     volumes:
       - ./:/MoneyPrinterTurbo
-    ports:
-      - "8180:8080"  # cambia el puerto externo para evitar conflicto
+    expose:
+      - "8080"  # lo expone internamente al proxy reverso
     environment:
       - HOST=0.0.0.0
       - PORT=8080
