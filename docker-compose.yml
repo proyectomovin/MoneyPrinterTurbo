@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # Le decimos que escuche en todas las IPs, no solo en localhost
     command: [ "streamlit", "run", "./webui/Main.py","--server.address=0.0.0.0","--server.enableCORS=True","--browser.gatherUsageStats=False" ]
     volumes:
       - ./:/MoneyPrinterTurbo
@@ -11,12 +12,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # Se revirtió al comando original
+    # Usamos el comando original
     command: [ "python3", "main.py" ]
     volumes:
       - ./:/MoneyPrinterTurbo
     restart: always
-    # Se añadió este bloque para configurar el host y puerto
+    # Y le pasamos la variable de entorno para que escuche en todas las IPs
     environment:
       - HOST=0.0.0.0
       - PORT=8080
