@@ -11,7 +11,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: [ "uvicorn", "main:server", "--host", "0.0.0.0", "--port", "8080" ]
+    # Se revirtió al comando original
+    command: [ "python3", "main.py" ]
     volumes:
       - ./:/MoneyPrinterTurbo
     restart: always
+    # Se añadió este bloque para configurar el host y puerto
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8080
