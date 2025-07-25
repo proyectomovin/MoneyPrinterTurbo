@@ -14,7 +14,7 @@ services:
     volumes:
       - ./:/MoneyPrinterTurbo
     expose:
-      - "8501"  # lo expone internamente al proxy reverso
+      - "8501"
     restart: always
 
   api:
@@ -25,8 +25,8 @@ services:
     volumes:
       - ./:/MoneyPrinterTurbo
     expose:
-      - "8501"  # lo expone internamente al proxy reverso
+      - "8000"
     environment:
       - HOST=0.0.0.0
-      - PORT=8501
+      - PORT=8000
     restart: always
