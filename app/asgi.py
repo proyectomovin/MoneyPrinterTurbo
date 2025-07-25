@@ -36,14 +36,15 @@ def get_application() -> FastAPI:
 
     Returns:
        FastAPI: Application object instance.
-
     """
     instance = FastAPI(
         title=config.project_name,
         description=config.project_description,
         version=config.project_version,
         debug=False,
+        root_path="/"  # 👈 agregado para que funcione con proxy reverso
     )
+
     instance.include_router(root_api_router)
     instance.add_exception_handler(HttpException, exception_handler)
     instance.add_exception_handler(RequestValidationError, validation_exception_handler)
